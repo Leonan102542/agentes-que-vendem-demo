@@ -1,13 +1,13 @@
-AGENTES QUE VENDEM — V15 SALES EXPERIENCE
+AGENTES QUE VENDEM — V16 READABLE
 
-Versão estática para Vercel.
-Não contém admin, setup, banco, tokens ou integrações privadas.
+Mudanças:
+- ritmo padrão desacelerado para leitura confortável;
+- pausas proporcionais ao tamanho das mensagens;
+- digitação mais natural do agente;
+- notificações permanecem visíveis por mais tempo;
+- botão Iniciar vira Pausar/Continuar durante a execução;
+- cartões importantes recebem tempo próprio de leitura;
+- avatar/cartoon removido e substituído por marca abstrata limpa da Lumina;
+- linguagem de pagamento simplificada para o público comercial.
 
-Para atualizar o repositório existente pelo Termux:
-1. Extraia este ZIP em uma pasta temporária.
-2. Copie index.html, app.css, demo.js, vercel.json e assets/ para o repositório agentes-que-vendem-demo.
-3. git add .
-4. git commit -m "V15 Sales Experience"
-5. git push
-
-A Vercel fará o redeploy automaticamente.
+Deploy: substitua os arquivos do repositório existente, git add -A, commit e push.

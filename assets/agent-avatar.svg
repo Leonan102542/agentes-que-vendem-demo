@@ -1,22 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
   <defs>
-    <linearGradient id="bg" x1="34" y1="28" x2="220" y2="236" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#DFF6F1"/>
-      <stop offset="1" stop-color="#B4E0EB"/>
+    <linearGradient id="bg" x1="32" y1="24" x2="224" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F5C78"/>
+      <stop offset="1" stop-color="#123B66"/>
     </linearGradient>
-    <linearGradient id="shirt" x1="74" y1="151" x2="188" y2="228" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1A6E86"/>
-      <stop offset="1" stop-color="#163E61"/>
+    <linearGradient id="water" x1="54" y1="78" x2="205" y2="189" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7CE8D4"/>
+      <stop offset="1" stop-color="#45B7F2"/>
     </linearGradient>
   </defs>
-  <rect width="256" height="256" rx="128" fill="url(#bg)"/>
-  <circle cx="128" cy="98" r="44" fill="#F1C9A9"/>
-  <path d="M89 88C89 58 106 38 130 38C157 38 174 58 174 87C168 79 160 76 149 76C136 76 126 82 117 90C106 100 97 102 89 88Z" fill="#243A4C"/>
-  <path d="M107 104C112 112 120 116 128 116C136 116 144 112 149 104" stroke="#BC8760" stroke-width="4" stroke-linecap="round"/>
-  <path d="M76 214C82 176 100 154 128 154C156 154 174 176 180 214" fill="url(#shirt)"/>
-  <path d="M99 154C106 166 116 172 128 172C140 172 150 166 157 154" fill="#F1C9A9"/>
-  <path d="M102 150C103 161 114 170 128 170C142 170 153 161 154 150" stroke="#DEB597" stroke-width="4" stroke-linecap="round"/>
-  <rect x="98" y="188" width="60" height="14" rx="7" fill="#2BD18B" opacity="0.95"/>
-  <circle cx="111" cy="96" r="4" fill="#243A4C"/>
-  <circle cx="145" cy="96" r="4" fill="#243A4C"/>
+  <circle cx="128" cy="128" r="124" fill="url(#bg)"/>
+  <circle cx="128" cy="128" r="108" stroke="rgba(255,255,255,.13)" stroke-width="2"/>
+  <path d="M54 142C77 126 97 126 119 141C141 156 160 156 184 140C194 133 203 131 212 132V165C192 163 176 168 160 178C137 192 115 191 93 177C78 168 66 164 44 166V149C47 147 50 145 54 142Z" fill="url(#water)"/>
+  <path d="M78 76H111V132C111 143 117 149 130 149H170V177H125C94 177 78 160 78 132V76Z" fill="white"/>
+  <circle cx="184" cy="82" r="17" fill="#7CE8D4"/>
 </svg>
