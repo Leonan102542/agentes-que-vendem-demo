@@ -3,180 +3,228 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0d1726">
-  <title>Agentes que Vendem — Demonstração Final</title>
+  <meta name="theme-color" content="#08111e">
+  <meta name="description" content="Demonstração comercial de atendimento e qualificação de leads para empresas de piscinas.">
+  <title>Agentes que Vendem — Demonstração</title>
   <link rel="stylesheet" href="./app.css">
 </head>
-<body class="present-body v4-present v5-present">
-  <div class="present-shell">
-    <header class="present-top studio-topbar v4-topbar v5-topbar">
-      <div class="studio-brand">
-        <img class="studio-mark-img" src="./assets/brand-mark.svg" alt="Marca Lumina Piscinas & Outdoor">
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Agentes que Vendem">
+        <img src="./assets/brand-mark.svg" alt="">
+        <span>Agentes que Vendem</span>
+      </a>
+      <span class="demo-badge">Demonstração</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">ATENDIMENTO COMERCIAL PARA EMPRESAS DE PISCINAS</div>
+          <h1>Seu WhatsApp não precisa parar quando sua equipe sai.</h1>
+          <p class="hero-lead">Veja um cenário completo em que um novo pedido de orçamento chega fora do horário, é atendido, qualificado e organizado até a próxima etapa comercial.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="heroStart">Assistir demonstração <span>→</span></button>
+            <a class="text-link" href="#impact">Ver impacto no negócio</a>
+          </div>
+          <p class="fine-print">Cenário demonstrativo com empresa, pessoas, valores e resultados simulados.</p>
+        </div>
+
+        <div class="hero-proof" aria-label="Resumo do cenário">
+          <div class="proof-top"><span class="status-dot"></span> Cenário: loja fechada às 21:46</div>
+          <div class="proof-number">R$ 27.800</div>
+          <div class="proof-label">oportunidade acompanhada no cenário</div>
+          <div class="proof-row">
+            <div><b>1</b><span>lead qualificado</span></div>
+            <div><b>1</b><span>visita encaminhada</span></div>
+            <div><b>R$ 2.780</b><span>sinal confirmado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section section" id="demo">
+      <div class="container">
+        <div class="section-heading demo-heading">
+          <div>
+            <div class="eyebrow">ACOMPANHE A JORNADA</div>
+            <h2>Do primeiro “boa noite” ao sinal confirmado.</h2>
+          </div>
+          <div class="demo-controls">
+            <button class="ghost-btn" id="restartBtn">Reiniciar</button>
+            <button class="primary-btn compact" id="startBtn">Iniciar</button>
+          </div>
+        </div>
+
+        <div class="demo-layout">
+          <div class="phone-column">
+            <div class="phone-frame">
+              <div class="wa-header">
+                <div class="wa-avatar"><img src="./assets/agent-avatar.svg" alt="Marina"></div>
+                <div class="wa-title"><b>Lumina Piscinas</b><span id="waStatus">Marina · atendimento comercial</span></div>
+                <div class="wa-more">•••</div>
+              </div>
+              <div class="closed-strip"><span></span> Loja fechada · atendimento continua <time id="clock">21:46</time></div>
+              <div class="chat" id="chat">
+                <div class="chat-intro">
+                  <div class="lock-mark">✓</div>
+                  <span>Dados e valores desta conversa são fictícios.</span>
+                </div>
+              </div>
+              <div class="composer"><span>＋</span><div>Mensagem</div><span>◉</span></div>
+            </div>
+          </div>
+
+          <div class="impact-column">
+            <div class="stage-card">
+              <div class="stage-top">
+                <div>
+                  <span class="mini-label">STATUS DA OPORTUNIDADE</span>
+                  <h3 id="stageTitle">Aguardando início</h3>
+                </div>
+                <span class="stage-pill" id="stagePill">0%</span>
+              </div>
+              <div class="progress"><span id="progressBar"></span></div>
+              <div class="stage-steps" id="stageSteps"></div>
+            </div>
+
+            <div class="metrics-grid">
+              <article class="metric-card">
+                <span>Valor potencial</span>
+                <strong id="potential">—</strong>
+                <small id="potentialSub">aguardando qualificação</small>
+              </article>
+              <article class="metric-card">
+                <span>Próxima ação</span>
+                <strong id="nextAction">—</strong>
+                <small id="actionSub">nenhuma ação pendente</small>
+              </article>
+              <article class="metric-card">
+                <span>Recebido pela loja</span>
+                <strong id="received">R$ 0</strong>
+                <small id="receivedSub">sem pagamento confirmado</small>
+              </article>
+              <article class="metric-card">
+                <span>Equipe humana</span>
+                <strong id="human">0 min</strong>
+                <small>tempo exigido nesta primeira etapa</small>
+              </article>
+            </div>
+
+            <div class="event-card">
+              <div class="event-head"><h3>O que está acontecendo</h3><span>tempo real</span></div>
+              <div class="event-feed" id="eventFeed">
+                <div class="empty-event">Inicie a demonstração para acompanhar as ações.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+    </section>
+
+    <section class="impact-section section" id="impact">
+      <div class="container">
+        <div class="section-heading centered">
+          <div class="eyebrow">POR QUE ISSO IMPORTA</div>
+          <h2>O atendimento não termina na resposta automática.</h2>
+          <p>O objetivo é transformar mensagens soltas em oportunidades organizadas para a equipe comercial continuar.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <article class="compare-card weak">
+            <div class="compare-kicker">SEM O FLUXO</div>
+            <h3>O lead chega às 21:46.</h3>
+            <div class="timeline-list">
+              <div><time>21:46</time><span>Cliente pede orçamento.</span></div>
+              <div><time>21:46</time><span>Equipe está fora do horário.</span></div>
+              <div><time>08:10</time><span>Atendimento começa no dia seguinte.</span></div>
+              <div class="risk"><time>?</time><span>O cliente pode já ter chamado concorrentes.</span></div>
+            </div>
+          </article>
+
+          <article class="compare-card strong">
+            <div class="compare-kicker">COM O AGENTE</div>
+            <h3>O lead já chega organizado pela manhã.</h3>
+            <div class="timeline-list">
+              <div><time>21:46</time><span>Primeira resposta e coleta de contexto.</span></div>
+              <div><time>21:51</time><span>Projeto e intenção classificados.</span></div>
+              <div><time>21:57</time><span>Visita encaminhada com dados completos.</span></div>
+              <div class="success"><time>08:02</time><span>Equipe recebe resumo e próxima ação.</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="simulation-block">
+          <div class="simulation-copy">
+            <span class="mini-label">EXEMPLO DE 30 DIAS · DADOS SIMULADOS</span>
+            <h3>O painel mostra o que acontece depois das conversas.</h3>
+            <p>Leads atendidos, oportunidades qualificadas, visitas geradas, follow-ups e receita associada ao fluxo ficam visíveis em um só lugar.</p>
+          </div>
+          <div class="simulation-metrics">
+            <div><strong>47</strong><span>leads fora do horário</span></div>
+            <div><strong>19</strong><span>qualificados</span></div>
+            <div><strong>11</strong><span>visitas encaminhadas</span></div>
+            <div><strong>8</strong><span>leads recuperados</span></div>
+            <div class="wide"><strong>R$ 143,6 mil</strong><span>em oportunidades acompanhadas no exemplo</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section section">
+      <div class="container">
+        <div class="section-heading centered narrow">
+          <div class="eyebrow">ALÉM DA CONVERSA</div>
+          <h2>O comercial recebe contexto, não apenas mensagens.</h2>
+        </div>
+        <div class="feature-grid">
+          <article><span class="feature-index">01</span><h3>Qualificação</h3><p>Organiza cidade, tipo de projeto, medidas, prazo, extras e faixa de investimento.</p></article>
+          <article><span class="feature-index">02</span><h3>Agenda</h3><p>Encaminha a visita e registra a próxima ação para a equipe não perder o timing.</p></article>
+          <article><span class="feature-index">03</span><h3>Follow-up</h3><p>Ajuda a retomar oportunidades que esfriaram sem depender de memória ou planilha solta.</p></article>
+          <article><span class="feature-index">04</span><h3>CRM</h3><p>Mostra estágio, valor potencial, histórico, pagamento e o que precisa acontecer depois.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="morning-section section">
+      <div class="container morning-wrap">
+        <div class="morning-copy">
+          <div class="eyebrow">08:02 · RESUMO DA MANHÃ</div>
+          <h2>A equipe abre o dia sabendo o que merece atenção.</h2>
+          <p>Em vez de começar vasculhando conversas, o responsável recebe um resumo das oportunidades e das próximas ações.</p>
+        </div>
+        <div class="summary-card">
+          <div class="summary-header"><b>Resumo automático</b><span>Hoje · 08:02</span></div>
+          <div class="summary-row"><span>Leads recebidos enquanto a loja estava fechada</span><b>7</b></div>
+          <div class="summary-row"><span>Oportunidades qualificadas</span><b>3</b></div>
+          <div class="summary-row"><span>Visitas encaminhadas</span><b>1</b></div>
+          <div class="summary-row highlight"><span>Sinal confirmado no cenário</span><b>R$ 2.780</b></div>
+          <div class="summary-note">Exemplo demonstrativo. Não representa resultados reais de uma empresa específica.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-section section">
+      <div class="container final-card">
         <div>
-          <div class="present-title">Demonstração comercial · Executive</div>
-          <div class="present-sub">Lumina Piscinas & Outdoor · atendimento, CRM e pagamento em uma única jornada</div>
+          <div class="eyebrow">A PERGUNTA É SIMPLES</div>
+          <h2>Quantos pedidos de orçamento chegam quando ninguém consegue responder na hora?</h2>
+          <p>A implantação é adaptada ao atendimento, serviços, regiões e processo comercial da empresa.</p>
         </div>
+        <button class="primary-btn" id="finalReplay">Rever demonstração <span>↻</span></button>
       </div>
-      <div class="present-controls v4-controls v5-controls">
-        <button class="btn" id="restartBtn" type="button"><span id="restartIcon"></span> Reiniciar</button>
-        <button class="btn" id="pauseBtn" type="button"><span id="pauseIcon"></span> Pausar</button>
-        <button class="btn" id="nextBtn" type="button"><span id="nextIcon"></span> Próximo</button>
-        <label class="speed-control">Ritmo
-          <select id="speedSelect" class="speed-select">
-            <option value="1" selected>Natural · ~8 min</option>
-            <option value="0.62">Reunião · ~5 min</option>
-            <option value="0.26">Expressa · ~2 min</option>
-            <option value="manual">Manual</option>
-          </select>
-        </label>
-        <label class="speed-control">Cenário
-          <select id="scenarioSelect" class="speed-select">
-            <option value="pool" selected>Piscina nova premium</option>
-            <option value="reforma">Reforma e modernização</option>
-            <option value="retomada">Lead retomado com fechamento</option>
-          </select>
-        </label>
-        <button class="btn" id="cinemaBtn" type="button"><span id="cinemaIcon"></span> Cinema</button>
-        <button class="btn" id="fullscreenBtn" type="button"><span id="fullscreenIcon"></span> Tela cheia</button>
-        <button class="btn" id="toggleInsightsBtn" type="button"><span id="insightsIcon"></span> Painel</button>
-        <button class="btn primary" id="startBtn" type="button"><span id="playIcon"></span> Iniciar</button>
-      </div>
-    </header>
+    </section>
+  </main>
 
-    <div class="presentation-deck"><span class="deck-dot"></span><strong>Objetivo da demo:</strong> mostrar uma venda sendo organizada fora do horário, sem depender de resposta humana imediata.</div>
-    <main class="present-grid studio-present-grid v4-present-grid v5-present-grid">
-      <section class="present-phone-wrap">
-        <div class="present-phone studio-phone v4-phone" aria-label="Conversa simulada no WhatsApp">
-          <div class="demo-wa-head v4-wa-head">
-            <button class="phone-icon-btn" aria-label="Voltar">‹</button>
-            <img class="brand-avatar-img agent-avatar-header" src="./assets/agent-avatar.svg" alt="Foto profissional da consultora Marina">
-            <div class="demo-wa-copy">
-              <strong id="chatCompanyName">Lumina Piscinas & Outdoor</strong>
-              <span id="waStatus">Marina · consultora comercial</span>
-            </div>
-            <div class="demo-wa-actions"><span id="phoneIcon"></span><span id="moreIcon"></span></div>
-          </div>
-          <div class="demo-context-bar v4-context-bar">
-            <span class="context-dot"></span>
-            <span id="contextBarText">Loja fechada · automação comercial segue atendendo e organiza tudo para a equipe</span>
-            <time id="contextBarTime">21:46</time>
-          </div>
-          <div class="chat-wallpaper presentation-chat v4-chat" id="presentationChat">
-            <div class="day-chip">Hoje</div>
-            <div class="conversation-empty" id="conversationEmpty">
-              <div class="empty-lock" id="lockIcon"></div>
-              <div>Conversa protegida. Nesta demonstração, dados, horários e valores são fictícios.</div>
-            </div>
-          </div>
-          <div class="demo-composer v4-composer">
-            <span id="paperclipIcon"></span>
-            <div class="demo-input">Mensagem</div>
-            <span id="cameraIcon"></span>
-            <span id="micIcon"></span>
-          </div>
-        </div>
-      </section>
+  <footer>
+    <div class="container footer-inner"><span>Agentes que Vendem</span><span>Demonstração comercial · dados simulados</span></div>
+  </footer>
 
-      <aside class="present-insights studio-insights" id="insightsPanel">
-        <section class="present-card hero-story-card v4-card accent-card v5-hero-card">
-          <div class="present-card-head">
-            <div>
-              <div class="eyebrow-dark">Jornada em tempo real</div>
-              <div class="present-card-title" id="storyTitle">Da primeira mensagem ao sinal confirmado</div>
-            </div>
-            <span class="live-pill"><i></i> Demo ao vivo</span>
-          </div>
-          <div class="present-card-body">
-            <div class="story-progress-wrap">
-              <div class="story-progress-labels"><span id="scenarioLabel">Piscina nova premium</span><strong id="progressLabel">0%</strong></div>
-              <div class="story-progress-track"><div class="story-progress-fill" id="storyProgress"></div></div>
-            </div>
-            <div class="story-focus" id="storyFocus">Aguardando início da demonstração</div>
-            <div class="journey-steps" id="journeySteps"></div>
-            <div class="story-meta">
-              <div><span>Início</span><strong id="storyStart">21:46</strong></div>
-              <div><span>Tempo simulado</span><strong id="storyElapsed">0 min</strong></div>
-              <div><span>Tempo humano poupado</span><strong id="humanTime">0 min</strong></div>
-            </div>
-          </div>
-        </section>
-
-        <div class="insight-two-col">
-          <section class="present-card v4-card">
-            <div class="present-card-head"><div class="present-card-title">Oportunidade</div><span id="stageBadge" class="dark-badge">Novo lead</span></div>
-            <div class="present-card-body">
-              <div class="lead-person-row">
-                <img class="lead-person-photo" src="./assets/customer-avatar.svg" alt="Foto do cliente">
-                <div><strong id="leadName">Cliente não identificado</strong><span id="leadSub">Instagram · agora</span></div>
-                <div class="lead-score-box"><b id="leadScore">—</b><span>score</span></div>
-              </div>
-              <div class="snapshot-grid">
-                <div class="snapshot-item"><span>Cidade</span><b id="snapCity">—</b></div>
-                <div class="snapshot-item"><span>Projeto</span><b id="snapProject">—</b></div>
-                <div class="snapshot-item"><span>Prazo</span><b id="snapDeadline">—</b></div>
-                <div class="snapshot-item"><span>Potencial</span><b id="snapValue">—</b></div>
-              </div>
-              <div class="reason-list" id="scoreReasons"><span>Aguardando qualificação…</span></div>
-            </div>
-          </section>
-
-          <section class="present-card v4-card">
-            <div class="present-card-head"><div class="present-card-title">Recebimentos da loja</div><span class="dark-muted" id="paymentStatusTop">Nenhum</span></div>
-            <div class="present-card-body store-money-body">
-              <div class="store-money-total"><span>Recebido nesta demo</span><strong id="receivedTotal">R$ 0</strong></div>
-              <div id="moneyFeed" class="store-money-feed"><div class="empty-mini">O recebimento da loja aparece aqui quando o gateway confirma o pagamento.</div></div>
-            </div>
-          </section>
-        </div>
-
-        <section class="present-card activity-card v4-card">
-          <div class="present-card-head">
-            <div class="present-card-title">Atividade do sistema</div>
-            <span class="dark-muted">cliente + agente + gateway</span>
-          </div>
-          <div class="present-card-body live-feed studio-live-feed" id="liveFeed">
-            <div class="empty-mini">Inicie a demonstração para acompanhar tudo em tempo real.</div>
-          </div>
-        </section>
-
-        <section class="morning-card studio-morning v4-morning" id="morningCard">
-          <div class="morning-eyebrow">Resumo automático · manhã seguinte · 08:02</div>
-          <div class="morning-title">Enquanto a equipe estava offline</div>
-          <div class="morning-grid">
-            <div class="morning-stat"><b id="morningLeads">7</b><span>leads recebidos</span></div>
-            <div class="morning-stat"><b id="morningQualified">3</b><span>qualificados</span></div>
-            <div class="morning-stat"><b id="morningVisits">1</b><span>visita agendada</span></div>
-            <div class="morning-stat"><b id="morningRevenue">R$ 2.780</b><span>sinal confirmado</span></div>
-          </div>
-          <div class="morning-summary-line" id="morningSummary"><strong>Resultado:</strong> um lead evoluiu até proposta, visita, pagamento de sinal e confirmação sem exigir resposta humana na primeira fase.</div>
-          <div class="demo-note">Cenário demonstrativo, com dados sintéticos e pagamento local/sandbox. Não representa vendas reais.</div>
-        </section>
-
-        <section class="present-card v4-card presenter-card">
-          <div class="present-card-head">
-            <div class="present-card-title">Guia rápido do apresentador</div>
-            <span class="dark-muted">atalhos úteis</span>
-          </div>
-          <div class="present-card-body presenter-body">
-            <div class="presenter-grid">
-              <div><strong>1. Contexto</strong><span>mostre que o lead entra à noite e a loja está offline.</span></div>
-              <div><strong>2. Qualificação</strong><span>destaque como nome, cidade, medida, foto e faixa de investimento são organizados.</span></div>
-              <div><strong>3. Venda</strong><span>aponte proposta, PIX, confirmação do gateway e recebimento da loja.</span></div>
-            </div>
-            <div class="shortcut-row">
-              <span><b>Espaço</b> pausar/continuar</span>
-              <span><b>→</b> próximo passo</span>
-              <span><b>R</b> reiniciar</span>
-              <span><b>F</b> tela cheia</span>
-              <span><b>I</b> mostrar/ocultar painel</span>
-            </div>
-          </div>
-        </section>
-      </aside>
-    </main>
-  </div>
-
-  <script src="./shared.js"></script>
-  <script src="./present.js"></script>
+  <script src="./demo.js"></script>
 </body>
 </html>
