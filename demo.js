@@ -44,6 +44,8 @@ function setMainButton(){
 }
 function clearDemo(){
   paused=false;
+  const inlineContact=$('#inlineContact'); if(inlineContact) inlineContact.hidden=true;
+  const copyHint=$('#copyHint'); if(copyHint) copyHint.textContent='Copiar número';
   chat.innerHTML=`<div class="chat-intro"><div class="lock-mark">✓</div><span>Dados e valores desta conversa são fictícios.</span></div>`;
   feed.innerHTML='<div class="empty-event">Inicie a demonstração para acompanhar as ações.</div>';
   toastStack.innerHTML='';
@@ -171,6 +173,11 @@ async function startDemo(){
   event('Resumo da manhã pronto','Equipe recebe lead, visita, proposta e pagamento organizados.','08:02','good');
   toast('Resumo da manhã','7 leads · 3 qualificados · 1 visita · R$ 2.780 de entrada','good');
   $('#stageTitle').textContent='Fluxo concluído';
+  const inlineContact=$('#inlineContact');
+  if(inlineContact){
+    inlineContact.hidden=false;
+    inlineContact.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
   await hold(4500,id);
   running=false;paused=false;setMainButton();$('#startBtn').textContent='Assistir novamente';
 }
@@ -180,4 +187,36 @@ $('#startBtn').addEventListener('click',startDemo);
 $('#restartBtn').addEventListener('click',restart);
 $('#heroStart').addEventListener('click',()=>{document.querySelector('#demo').scrollIntoView({behavior:'smooth'});setTimeout(startDemo,650)});
 $('#finalReplay').addEventListener('click',restart);
+
+async function copySalesPhone(){
+  const value='+55 11 96419-2848';
+  let ok=false;
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(value);
+      ok=true;
+    }
+  }catch(e){}
+  if(!ok){
+    const temp=document.createElement('textarea');
+    temp.value=value; temp.setAttribute('readonly','');
+    temp.style.position='fixed'; temp.style.opacity='0';
+    document.body.appendChild(temp); temp.select();
+    try{ ok=document.execCommand('copy'); }catch(e){}
+    temp.remove();
+  }
+  const hint=$('#copyHint');
+  if(hint){
+    hint.textContent=ok?'Número copiado ✓':'Número: '+value;
+    setTimeout(()=>{hint.textContent='Copiar número'},2600);
+  }
+  const alt=$('#copyPhoneAlt');
+  if(alt){
+    const before='Copiar número';
+    alt.textContent=ok?'Copiado ✓':value;
+    setTimeout(()=>{alt.textContent=before},2600);
+  }
+}
+const copyPhone=$('#copyPhone'); if(copyPhone) copyPhone.addEventListener('click',copySalesPhone);
+const copyPhoneAlt=$('#copyPhoneAlt'); if(copyPhoneAlt) copyPhoneAlt.addEventListener('click',copySalesPhone);
 renderSteps(0);

@@ -54,3 +54,29 @@
   .final-actions{display:grid;grid-template-columns:1fr;width:100%}
   .final-actions .primary-btn,.final-actions .ghost-btn{width:100%;min-height:52px}
 }
+
+/* V19 · contato no ponto de conclusão da demo */
+.inline-contact[hidden]{display:none!important}
+.inline-contact{margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.09);animation:inlineContactIn .36s ease both}
+.inline-contact-copy h4{font-size:22px;line-height:1.15;letter-spacing:-.025em;margin:7px 0 7px}
+.inline-contact-copy p{font-size:13px;color:var(--muted);margin:0 0 15px;max-width:560px}
+.phone-copy{width:100%;border:1px solid rgba(255,255,255,.09);background:#0a1727;color:var(--text);border-radius:14px;padding:13px 14px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;text-align:left}
+.phone-copy:hover{border-color:rgba(91,169,240,.42);background:#0c1b2d}
+.phone-copy-label{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#7f93a9;font-weight:800}
+.phone-copy strong{font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.copy-hint{font-size:11px;color:#7ebcf5;font-weight:760;white-space:nowrap}
+.inline-contact-actions{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}
+.inline-contact-actions .primary-btn,.inline-contact-actions .ghost-btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.inline-whatsapp{flex:1 1 210px}
+.inline-copy-btn{flex:0 0 auto}
+@keyframes inlineContactIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:520px){
+  .inline-contact{margin-top:18px;padding-top:18px}
+  .inline-contact-copy h4{font-size:20px}
+  .phone-copy{grid-template-columns:1fr auto;gap:4px 10px}
+  .phone-copy-label{grid-column:1/-1}
+  .phone-copy strong{font-size:14px}
+  .inline-contact-actions{display:grid;grid-template-columns:1fr}
+  .inline-contact-actions .primary-btn,.inline-contact-actions .ghost-btn{width:100%}
+  .inline-copy-btn{display:none!important}
+}
