@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0d1726">
+  <title>Agentes que Vendem — Demonstração Final</title>
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body class="present-body v4-present v5-present">
+  <div class="present-shell">
+    <header class="present-top studio-topbar v4-topbar v5-topbar">
+      <div class="studio-brand">
+        <img class="studio-mark-img" src="./assets/brand-mark.svg" alt="Marca Lumina Piscinas & Outdoor">
+        <div>
+          <div class="present-title">Demonstração comercial · Executive</div>
+          <div class="present-sub">Lumina Piscinas & Outdoor · atendimento, CRM e pagamento em uma única jornada</div>
+        </div>
+      </div>
+      <div class="present-controls v4-controls v5-controls">
+        <button class="btn" id="restartBtn" type="button"><span id="restartIcon"></span> Reiniciar</button>
+        <button class="btn" id="pauseBtn" type="button"><span id="pauseIcon"></span> Pausar</button>
+        <button class="btn" id="nextBtn" type="button"><span id="nextIcon"></span> Próximo</button>
+        <label class="speed-control">Ritmo
+          <select id="speedSelect" class="speed-select">
+            <option value="1" selected>Natural · ~8 min</option>
+            <option value="0.62">Reunião · ~5 min</option>
+            <option value="0.26">Expressa · ~2 min</option>
+            <option value="manual">Manual</option>
+          </select>
+        </label>
+        <label class="speed-control">Cenário
+          <select id="scenarioSelect" class="speed-select">
+            <option value="pool" selected>Piscina nova premium</option>
+            <option value="reforma">Reforma e modernização</option>
+            <option value="retomada">Lead retomado com fechamento</option>
+          </select>
+        </label>
+        <button class="btn" id="cinemaBtn" type="button"><span id="cinemaIcon"></span> Cinema</button>
+        <button class="btn" id="fullscreenBtn" type="button"><span id="fullscreenIcon"></span> Tela cheia</button>
+        <button class="btn" id="toggleInsightsBtn" type="button"><span id="insightsIcon"></span> Painel</button>
+        <button class="btn primary" id="startBtn" type="button"><span id="playIcon"></span> Iniciar</button>
+      </div>
+    </header>
+
+    <div class="presentation-deck"><span class="deck-dot"></span><strong>Objetivo da demo:</strong> mostrar uma venda sendo organizada fora do horário, sem depender de resposta humana imediata.</div>
+    <main class="present-grid studio-present-grid v4-present-grid v5-present-grid">
+      <section class="present-phone-wrap">
+        <div class="present-phone studio-phone v4-phone" aria-label="Conversa simulada no WhatsApp">
+          <div class="demo-wa-head v4-wa-head">
+            <button class="phone-icon-btn" aria-label="Voltar">‹</button>
+            <img class="brand-avatar-img agent-avatar-header" src="./assets/agent-avatar.svg" alt="Foto profissional da consultora Marina">
+            <div class="demo-wa-copy">
+              <strong id="chatCompanyName">Lumina Piscinas & Outdoor</strong>
+              <span id="waStatus">Marina · consultora comercial</span>
+            </div>
+            <div class="demo-wa-actions"><span id="phoneIcon"></span><span id="moreIcon"></span></div>
+          </div>
+          <div class="demo-context-bar v4-context-bar">
+            <span class="context-dot"></span>
+            <span id="contextBarText">Loja fechada · automação comercial segue atendendo e organiza tudo para a equipe</span>
+            <time id="contextBarTime">21:46</time>
+          </div>
+          <div class="chat-wallpaper presentation-chat v4-chat" id="presentationChat">
+            <div class="day-chip">Hoje</div>
+            <div class="conversation-empty" id="conversationEmpty">
+              <div class="empty-lock" id="lockIcon"></div>
+              <div>Conversa protegida. Nesta demonstração, dados, horários e valores são fictícios.</div>
+            </div>
+          </div>
+          <div class="demo-composer v4-composer">
+            <span id="paperclipIcon"></span>
+            <div class="demo-input">Mensagem</div>
+            <span id="cameraIcon"></span>
+            <span id="micIcon"></span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="present-insights studio-insights" id="insightsPanel">
+        <section class="present-card hero-story-card v4-card accent-card v5-hero-card">
+          <div class="present-card-head">
+            <div>
+              <div class="eyebrow-dark">Jornada em tempo real</div>
+              <div class="present-card-title" id="storyTitle">Da primeira mensagem ao sinal confirmado</div>
+            </div>
+            <span class="live-pill"><i></i> Demo ao vivo</span>
+          </div>
+          <div class="present-card-body">
+            <div class="story-progress-wrap">
+              <div class="story-progress-labels"><span id="scenarioLabel">Piscina nova premium</span><strong id="progressLabel">0%</strong></div>
+              <div class="story-progress-track"><div class="story-progress-fill" id="storyProgress"></div></div>
+            </div>
+            <div class="story-focus" id="storyFocus">Aguardando início da demonstração</div>
+            <div class="journey-steps" id="journeySteps"></div>
+            <div class="story-meta">
+              <div><span>Início</span><strong id="storyStart">21:46</strong></div>
+              <div><span>Tempo simulado</span><strong id="storyElapsed">0 min</strong></div>
+              <div><span>Tempo humano poupado</span><strong id="humanTime">0 min</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="insight-two-col">
+          <section class="present-card v4-card">
+            <div class="present-card-head"><div class="present-card-title">Oportunidade</div><span id="stageBadge" class="dark-badge">Novo lead</span></div>
+            <div class="present-card-body">
+              <div class="lead-person-row">
+                <img class="lead-person-photo" src="./assets/customer-avatar.svg" alt="Foto do cliente">
+                <div><strong id="leadName">Cliente não identificado</strong><span id="leadSub">Instagram · agora</span></div>
+                <div class="lead-score-box"><b id="leadScore">—</b><span>score</span></div>
+              </div>
+              <div class="snapshot-grid">
+                <div class="snapshot-item"><span>Cidade</span><b id="snapCity">—</b></div>
+                <div class="snapshot-item"><span>Projeto</span><b id="snapProject">—</b></div>
+                <div class="snapshot-item"><span>Prazo</span><b id="snapDeadline">—</b></div>
+                <div class="snapshot-item"><span>Potencial</span><b id="snapValue">—</b></div>
+              </div>
+              <div class="reason-list" id="scoreReasons"><span>Aguardando qualificação…</span></div>
+            </div>
+          </section>
+
+          <section class="present-card v4-card">
+            <div class="present-card-head"><div class="present-card-title">Recebimentos da loja</div><span class="dark-muted" id="paymentStatusTop">Nenhum</span></div>
+            <div class="present-card-body store-money-body">
+              <div class="store-money-total"><span>Recebido nesta demo</span><strong id="receivedTotal">R$ 0</strong></div>
+              <div id="moneyFeed" class="store-money-feed"><div class="empty-mini">O recebimento da loja aparece aqui quando o gateway confirma o pagamento.</div></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="present-card activity-card v4-card">
+          <div class="present-card-head">
+            <div class="present-card-title">Atividade do sistema</div>
+            <span class="dark-muted">cliente + agente + gateway</span>
+          </div>
+          <div class="present-card-body live-feed studio-live-feed" id="liveFeed">
+            <div class="empty-mini">Inicie a demonstração para acompanhar tudo em tempo real.</div>
+          </div>
+        </section>
+
+        <section class="morning-card studio-morning v4-morning" id="morningCard">
+          <div class="morning-eyebrow">Resumo automático · manhã seguinte · 08:02</div>
+          <div class="morning-title">Enquanto a equipe estava offline</div>
+          <div class="morning-grid">
+            <div class="morning-stat"><b id="morningLeads">7</b><span>leads recebidos</span></div>
+            <div class="morning-stat"><b id="morningQualified">3</b><span>qualificados</span></div>
+            <div class="morning-stat"><b id="morningVisits">1</b><span>visita agendada</span></div>
+            <div class="morning-stat"><b id="morningRevenue">R$ 2.780</b><span>sinal confirmado</span></div>
+          </div>
+          <div class="morning-summary-line" id="morningSummary"><strong>Resultado:</strong> um lead evoluiu até proposta, visita, pagamento de sinal e confirmação sem exigir resposta humana na primeira fase.</div>
+          <div class="demo-note">Cenário demonstrativo, com dados sintéticos e pagamento local/sandbox. Não representa vendas reais.</div>
+        </section>
+
+        <section class="present-card v4-card presenter-card">
+          <div class="present-card-head">
+            <div class="present-card-title">Guia rápido do apresentador</div>
+            <span class="dark-muted">atalhos úteis</span>
+          </div>
+          <div class="present-card-body presenter-body">
+            <div class="presenter-grid">
+              <div><strong>1. Contexto</strong><span>mostre que o lead entra à noite e a loja está offline.</span></div>
+              <div><strong>2. Qualificação</strong><span>destaque como nome, cidade, medida, foto e faixa de investimento são organizados.</span></div>
+              <div><strong>3. Venda</strong><span>aponte proposta, PIX, confirmação do gateway e recebimento da loja.</span></div>
+            </div>
+            <div class="shortcut-row">
+              <span><b>Espaço</b> pausar/continuar</span>
+              <span><b>→</b> próximo passo</span>
+              <span><b>R</b> reiniciar</span>
+              <span><b>F</b> tela cheia</span>
+              <span><b>I</b> mostrar/ocultar painel</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./shared.js"></script>
+  <script src="./present.js"></script>
+</body>
+</html>
