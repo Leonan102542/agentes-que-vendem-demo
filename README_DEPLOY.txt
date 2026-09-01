@@ -1,13 +1,18 @@
-AGENTES QUE VENDEM — V16 READABLE
+AGENTES QUE VENDEM — V18 CTA
 
 Mudanças:
-- ritmo padrão desacelerado para leitura confortável;
-- pausas proporcionais ao tamanho das mensagens;
-- digitação mais natural do agente;
-- notificações permanecem visíveis por mais tempo;
-- botão Iniciar vira Pausar/Continuar durante a execução;
-- cartões importantes recebem tempo próprio de leitura;
-- avatar/cartoon removido e substituído por marca abstrata limpa da Lumina;
-- linguagem de pagamento simplificada para o público comercial.
+- Fechamento da demo com resultado resumido do cenário.
+- CTA "Quero entender para minha empresa".
+- CTA abre WhatsApp de Eduardo: +55 11 96419-2848.
+- Mensagem já preenchida para reduzir atrito.
+- Botão "Assistir novamente" preservado.
+- Layout responsivo para desktop e mobile.
+- Dados continuam identificados como simulados.
 
-Deploy: substitua os arquivos do repositório existente, git add -A, commit e push.
+DEPLOY NO MESMO PROJETO VERCEL:
+1) Extraia este ZIP dentro do repositório agentes-que-vendem-demo substituindo os arquivos.
+2) git add -A
+3) git commit -m "V18 CTA WhatsApp"
+4) git push
+
+A Vercel atualizará o mesmo endereço.

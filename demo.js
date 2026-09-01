@@ -1,6 +1,6 @@
 const $ = (s)=>document.querySelector(s);
 const chat=$('#chat'), feed=$('#eventFeed'), toastStack=$('#toastStack');
-const stages=['Lead','Qualificação','Visita','Proposta','Sinal','Ganho'];
+const stages=['Lead','Qualificação','Visita','Proposta','Entrada','Ganho'];
 let run=0,running=false,paused=false;
 const state={clock:'21:46'};
 
@@ -143,14 +143,14 @@ async function startDemo(){
   toast('Proposta enviada','Oportunidade atualizada para R$ 27.800');
   if(!await hold(PACE.card,id))return;
   if(!await say('out','Gostei. Pode manter assim. Como faço para reservar o projeto?','17:44',id))return;
-  if(!await say('in','Para reservar, o sinal deste cenário é de R$ 2.780. Posso gerar o PIX para você.','17:45',id))return;
+  if(!await say('in','Para reservar, a entrada deste cenário é de R$ 2.780. Posso gerar o PIX para você.','17:45',id))return;
   if(!await say('out','Pode gerar.','17:45',id))return;
 
-  stage(4,'Sinal aguardando confirmação');
-  card('PIX DO SINAL','R$ 2.780','Cobrança vinculada à proposta. A mensagem “paguei” não confirma o recebimento.','Aguardando confirmação do pagamento');
+  stage(4,'Entrada aguardando confirmação');
+  card('PIX DA ENTRADA','R$ 2.780','Cobrança vinculada à proposta. A mensagem “paguei” não confirma o recebimento.','Aguardando confirmação do pagamento');
   $('#nextAction').textContent='Confirmar PIX';$('#actionSub').textContent='aguardando confirmação do pagamento';
   event('Cobrança criada','PIX de R$ 2.780 vinculado à proposta.','17:46','warn');
-  toast('PIX criado','Sinal de R$ 2.780 aguardando confirmação.','warn');
+  toast('PIX criado','Entrada de R$ 2.780 aguardando confirmação.','warn');
   if(!await hold(PACE.card,id))return;
   if(!await say('out','Paguei 👍','17:48',id))return;
   if(!await say('in','Recebi sua mensagem. Vou aguardar a confirmação do pagamento antes de marcar como concluído.','17:48',id))return;
@@ -158,18 +158,18 @@ async function startDemo(){
   if(!await hold(PACE.moment+900,id))return;
 
   stage(5,'Oportunidade ganha no cenário');
-  card('PAGAMENTO CONFIRMADO','Sinal recebido · R$ 2.780','Confirmação recebida pelo meio de pagamento conectado à loja.','Negócio atualizado para GANHO');
+  card('PAGAMENTO CONFIRMADO','Entrada recebida · R$ 2.780','Confirmação recebida pelo meio de pagamento conectado à loja.','Negócio atualizado para GANHO');
   $('#received').textContent='R$ 2.780';$('#receivedSub').textContent='pagamento confirmado no cenário';
   $('#nextAction').textContent='Equipe assume';$('#actionSub').textContent='projeto pronto para continuidade';$('#human').textContent='0 min';
   event('Pagamento confirmado','R$ 2.780 confirmados para a loja.','17:49','good');
-  toast('Sinal confirmado · R$ 2.780','Negócio atualizado para ganho.','good');
+  toast('Entrada confirmada · R$ 2.780','Negócio atualizado para ganho.','good');
   if(!await hold(1700,id))return;
   toast('Oportunidade preservada','R$ 27.800 acompanhados neste cenário.','good');
   if(!await hold(PACE.card,id))return;
 
   setClock('08:02');
   event('Resumo da manhã pronto','Equipe recebe lead, visita, proposta e pagamento organizados.','08:02','good');
-  toast('Resumo da manhã','7 leads · 3 qualificados · 1 visita · R$ 2.780 de sinal','good');
+  toast('Resumo da manhã','7 leads · 3 qualificados · 1 visita · R$ 2.780 de entrada','good');
   $('#stageTitle').textContent='Fluxo concluído';
   await hold(4500,id);
   running=false;paused=false;setMainButton();$('#startBtn').textContent='Assistir novamente';
